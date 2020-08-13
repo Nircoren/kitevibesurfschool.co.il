@@ -4,19 +4,19 @@
 //////////////////////////
 
 //Your E-mail
-$your_email = 'kitevibesurfschool@gmail.com';
+$your_email = 'nircoren@gmail.com';
 
 //Default Subject if 'subject' field not specified
-$default_subject = 'From My Contact Form1';
+$default_subject = 'אנא פרט/י את סיבת הפנייה';
 
 //Message if 'name' field not specified
-$name_not_specified = 'Please type a valid name';
+$name_not_specified = 'נא להקיש שם תקין';
 
 //Message if e-mail sent successfully
-$email_was_sent = 'Thanks, your message successfully sent';
+$email_was_sent = 'תודה, ההודעה נשלחה בהצלחה';
 
 //Message if e-mail not sent (server not configured)
-$server_not_configured = 'Sorry, mail server not configured (function "mail()" disabled on your server?)';
+$server_not_configured = 'הפעולה נכשלה';
 
 
 ///////////////////////////
@@ -60,9 +60,9 @@ if(isset($_POST['name'])) {
 		//duplicating email meta (from and subject) to email message body
 		$message_meta = '';
 			//From name and email
-		$message_meta .= 'From: '. $sender_name . ' ' . $sender_email . "<br>";
+		$message_meta .= 'name'. $sender_name . ' ' . $sender_email . "<br>";
 			//Subject or default subject
-		$message_meta .= 'Subject: '. ( $subject ? $subject : $default_subject ) . "<br>";
+		$message_meta .= 'subject'. ( $subject ? $subject : $default_subject ) . "<br>";
 
 		//adding another CUSTOM contact form fields that added by user to email message body
 		foreach ($_POST as $key => $value) {
